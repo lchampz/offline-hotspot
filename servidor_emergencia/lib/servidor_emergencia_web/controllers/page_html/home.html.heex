@@ -1,0 +1,40 @@
+<Layouts.app flash={@flash}>
+  <div class="py-10">
+    <h1 class="text-[2rem] font-semibold leading-10 tracking-tighter text-balance">
+      Rede de Emergência
+    </h1>
+    <p class="mt-4 leading-7 text-base-content/70">
+      Este é um servidor de comunicação local, disponível mesmo sem conexão com a
+      internet. Use as opções abaixo para ver avisos da comunidade ou consultar
+      documentos e manuais salvos neste dispositivo.
+    </p>
+
+    <div class="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2">
+      <a
+        href="/avisos"
+        class="group relative rounded-box px-6 py-6 text-sm font-semibold leading-6"
+      >
+        <span class="absolute inset-0 rounded-box bg-base-200 transition group-hover:bg-base-300"></span>
+        <span class="relative flex flex-col gap-2">
+          <span class="text-base">Quadro de Avisos</span>
+          <span class="font-normal text-base-content/70">
+            Recados, pedidos de ajuda e avisos sanitários da comunidade.
+          </span>
+        </span>
+      </a>
+
+      <a
+        href="/documentos"
+        class="group relative rounded-box px-6 py-6 text-sm font-semibold leading-6"
+      >
+        <span class="absolute inset-0 rounded-box bg-base-200 transition group-hover:bg-base-300"></span>
+        <span class="relative flex flex-col gap-2">
+          <span class="text-base">Documentos</span>
+          <span class="font-normal text-base-content/70">
+            Manuais de primeiros socorros, mapas locais e outros arquivos offline.
+          </span>
+        </span>
+      </a>
+    </div>
+  </div>
+</Layouts.app>

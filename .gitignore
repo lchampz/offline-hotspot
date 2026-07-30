@@ -1,0 +1,31 @@
+# servidor_emergencia (app Phoenix)
+/servidor_emergencia/_build/
+/servidor_emergencia/cover/
+/servidor_emergencia/deps/
+/servidor_emergencia/doc/
+/servidor_emergencia/.fetch
+/servidor_emergencia/erl_crash.dump
+/servidor_emergencia/*.ez
+/servidor_emergencia/tmp/
+/servidor_emergencia/servidor_emergencia-*.tar
+/servidor_emergencia/priv/static/assets/
+/servidor_emergencia/priv/static/cache_manifest.json
+/servidor_emergencia/assets/node_modules/
+/servidor_emergencia/npm-debug.log
+/servidor_emergencia/*.db
+/servidor_emergencia/*.db-*
+
+# firmware (projeto Nerves)
+/firmware/_build/
+/firmware/cover/
+/firmware/deps/
+/firmware/doc/
+/firmware/tmp/
+/firmware/erl_crash.dump
+/firmware/*.ez
+
+# geral
+.DS_Store
+*.log
+erl_crash.dump
+/servidor_emergencia/servidor_emergencia_dev.db*
