@@ -27,14 +27,14 @@ Palestinian people. Free Palestine. 🇵🇸
 
 ## Features
 
-- **Notice Board** (`/avisos`) — community notices, help requests, and
+- **Notice Board** (`/notices`) — community notices, help requests, and
   health notices, organized by category.
 - **Local Network Chat** (`/chat`) — real-time chat between anyone
   connected to the same Wi-Fi.
-- **Documents** (`/documentos`) — first-aid manuals, local maps, and
+- **Documents** (`/documents`) — first-aid manuals, local maps, and
   other PDFs, available offline (just drop the file in the folder, no
   code changes needed).
-- **Network Status** (`/rede`) — SSID, IP, and clients connected to the
+- **Network Status** (`/network`) — SSID, IP, and clients connected to the
   access point.
 - **Captive portal** — any phone that joins the Wi-Fi gets automatically
   redirected to the home page, just like an airport/hotel network —
@@ -46,9 +46,9 @@ no CDN dependency whatsoever.
 ## Repository layout
 
 ```
-servidor_emergencia/   Phoenix app (web interface, SQLite database)
-firmware/              Nerves project — packages the app above as
-                       firmware to run directly on a Raspberry Pi
+emergency_server/   Phoenix app (web interface, SQLite database)
+firmware/            Nerves project — packages the app above as
+                     firmware to run directly on a Raspberry Pi
 ```
 
 ## How to run it
@@ -58,7 +58,7 @@ firmware/              Nerves project — packages the app above as
 Requires [Elixir](https://elixir-lang.org/install.html) installed.
 
 ```bash
-cd servidor_emergencia
+cd emergency_server
 mix setup      # installs dependencies and sets up the database (first time only)
 mix phx.server
 ```
@@ -79,7 +79,7 @@ mix run --no-halt
 ```
 
 Visit [`http://localhost:4000`](http://localhost:4000) as usual, and
-[`http://localhost:4000/rede`](http://localhost:4000/rede) to see the
+[`http://localhost:4000/network`](http://localhost:4000/network) to see the
 simulated access point status.
 
 ### 3. Flashing a real Raspberry Pi

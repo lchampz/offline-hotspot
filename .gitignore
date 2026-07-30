@@ -1,19 +1,19 @@
-# servidor_emergencia (Phoenix app)
-/servidor_emergencia/_build/
-/servidor_emergencia/cover/
-/servidor_emergencia/deps/
-/servidor_emergencia/doc/
-/servidor_emergencia/.fetch
-/servidor_emergencia/erl_crash.dump
-/servidor_emergencia/*.ez
-/servidor_emergencia/tmp/
-/servidor_emergencia/servidor_emergencia-*.tar
-/servidor_emergencia/priv/static/assets/
-/servidor_emergencia/priv/static/cache_manifest.json
-/servidor_emergencia/assets/node_modules/
-/servidor_emergencia/npm-debug.log
-/servidor_emergencia/*.db
-/servidor_emergencia/*.db-*
+# emergency_server (Phoenix app)
+/emergency_server/_build/
+/emergency_server/cover/
+/emergency_server/deps/
+/emergency_server/doc/
+/emergency_server/.fetch
+/emergency_server/erl_crash.dump
+/emergency_server/*.ez
+/emergency_server/tmp/
+/emergency_server/emergency_server-*.tar
+/emergency_server/priv/static/assets/
+/emergency_server/priv/static/cache_manifest.json
+/emergency_server/assets/node_modules/
+/emergency_server/npm-debug.log
+/emergency_server/*.db
+/emergency_server/*.db-*
 
 # firmware (Nerves project)
 /firmware/_build/
@@ -24,8 +24,9 @@
 /firmware/erl_crash.dump
 /firmware/*.ez
 
-# geral
+# general
 .DS_Store
 *.log
 erl_crash.dump
-/servidor_emergencia/servidor_emergencia_dev.db*
+/emergency_server/emergency_server_dev.db*
+.claude/

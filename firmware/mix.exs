@@ -1,7 +1,7 @@
-defmodule ServidorEmergenciaFirmware.MixProject do
+defmodule EmergencyServerFirmware.MixProject do
   use Mix.Project
 
-  @app :servidor_emergencia_firmware
+  @app :emergency_server_firmware
   @version "0.1.0"
   @all_targets [:rpi3a, :rpi0]
 
@@ -22,7 +22,7 @@ defmodule ServidorEmergenciaFirmware.MixProject do
   def application do
     [
       extra_applications: [:logger, :runtime_tools],
-      mod: {ServidorEmergenciaFirmware.Application, []}
+      mod: {EmergencyServerFirmware.Application, []}
     ]
   end
 
@@ -33,10 +33,10 @@ defmodule ServidorEmergenciaFirmware.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      # Phoenix app (servidor_emergencia/) running as a dependency — it
+      # Phoenix app (emergency_server/) running as a dependency — it
       # starts on its own alongside the release since it already has its
       # own Application callback (Repo + PubSub + Endpoint).
-      {:servidor_emergencia, path: "../servidor_emergencia"},
+      {:emergency_server, path: "../emergency_server"},
 
       # Dependencies for all targets
       {:nerves, "~> 1.13", runtime: false},

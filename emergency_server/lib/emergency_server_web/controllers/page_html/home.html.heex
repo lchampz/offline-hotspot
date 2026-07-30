@@ -1,0 +1,40 @@
+<Layouts.app flash={@flash}>
+  <div class="py-10">
+    <h1 class="text-[2rem] font-semibold leading-10 tracking-tighter text-balance">
+      Emergency Network
+    </h1>
+    <p class="mt-4 leading-7 text-base-content/70">
+      This is a local communication server, available even without an internet
+      connection. Use the options below to see community notices or check
+      documents and manuals stored on this device.
+    </p>
+
+    <div class="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2">
+      <a
+        href="/notices"
+        class="group relative rounded-box px-6 py-6 text-sm font-semibold leading-6"
+      >
+        <span class="absolute inset-0 rounded-box bg-base-200 transition group-hover:bg-base-300"></span>
+        <span class="relative flex flex-col gap-2">
+          <span class="text-base">Notice Board</span>
+          <span class="font-normal text-base-content/70">
+            Community notices, help requests, and health notices.
+          </span>
+        </span>
+      </a>
+
+      <a
+        href="/documents"
+        class="group relative rounded-box px-6 py-6 text-sm font-semibold leading-6"
+      >
+        <span class="absolute inset-0 rounded-box bg-base-200 transition group-hover:bg-base-300"></span>
+        <span class="relative flex flex-col gap-2">
+          <span class="text-base">Documents</span>
+          <span class="font-normal text-base-content/70">
+            First-aid manuals, local maps, and other offline files.
+          </span>
+        </span>
+      </a>
+    </div>
+  </div>
+</Layouts.app>

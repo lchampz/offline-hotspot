@@ -1,7 +1,7 @@
-# ServidorEmergenciaFirmware
+# EmergencyServerFirmware
 
 Nerves firmware for the [Emergency Network](../README.md) — packages the
-`servidor_emergencia` app to run directly on a Raspberry Pi, broadcasting
+`emergency_server` app to run directly on a Raspberry Pi, broadcasting
 the emergency Wi-Fi with captive portal. See the repository's main README
 for the full project context.
 

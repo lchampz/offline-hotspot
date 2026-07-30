@@ -5,7 +5,7 @@ import Config
 # On the host, we use a high port (doesn't require root) and answer with
 # localhost — so you can open the resolved IP in a browser and close the
 # whole captive portal loop without any hardware.
-config :servidor_emergencia_firmware, :wildcard_dns,
+config :emergency_server_firmware, :wildcard_dns,
   # 5353 is the standard mDNS/Bonjour port, already taken on macOS — we
   # use an arbitrary high port just for the local demo.
   port: 15353,
@@ -14,10 +14,10 @@ config :servidor_emergencia_firmware, :wildcard_dns,
 # Boots Phoenix just like a normal "mix phx.server", except inside the
 # simulated firmware's supervisor (this is what will actually run inside
 # Nerves on the Pi).
-config :servidor_emergencia, ServidorEmergenciaWeb.Endpoint,
+config :emergency_server, EmergencyServerWeb.Endpoint,
   http: [ip: {0, 0, 0, 0}, port: 4000],
   check_origin: false,
-  # phoenix_live_reload is a :dev dep of servidor_emergencia and isn't
+  # phoenix_live_reload is a :dev dep of emergency_server and isn't
   # pulled in when it's used as a path-dependency here; code hot reload
   # runs through the `listeners: [Phoenix.CodeReloader]` already set in
   # mix.exs.
@@ -25,13 +25,13 @@ config :servidor_emergencia, ServidorEmergenciaWeb.Endpoint,
   debug_errors: true,
   server: true
 
-config :servidor_emergencia, ServidorEmergencia.Repo,
-  database: Path.expand("../../servidor_emergencia/servidor_emergencia_dev.db", __DIR__),
+config :emergency_server, EmergencyServer.Repo,
+  database: Path.expand("../../emergency_server/emergency_server_dev.db", __DIR__),
   pool_size: 5,
   stacktrace: true
 
-config :servidor_emergencia, dev_routes: true
-config :servidor_emergencia, network_adapter: ServidorEmergencia.Network.Mock
+config :emergency_server, dev_routes: true
+config :emergency_server, network_adapter: EmergencyServer.Network.Mock
 
 config :logger, :default_formatter, format: "[$level] $message\n"
 

@@ -103,8 +103,8 @@ config :mdns_lite,
     }
   ]
 
-config :servidor_emergencia, dev_routes: false
-config :servidor_emergencia, network_adapter: ServidorEmergencia.Network.Real
+config :emergency_server, dev_routes: false
+config :emergency_server, network_adapter: EmergencyServer.Network.Real
 
 # Import target specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.

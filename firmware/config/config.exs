@@ -18,30 +18,30 @@ config :nerves, :firmware, rootfs_overlay: "rootfs_overlay"
 
 config :nerves, source_date_epoch: "1785372114"
 
-# Config for the Phoenix app (servidor_emergencia/), replicated here
+# Config for the Phoenix app (emergency_server/), replicated here
 # because its own config.exs isn't loaded automatically when it's pulled
 # in as a dependency of another Mix project.
-config :servidor_emergencia,
-  ecto_repos: [ServidorEmergencia.Repo],
+config :emergency_server,
+  ecto_repos: [EmergencyServer.Repo],
   generators: [timestamp_type: :utc_datetime]
 
-config :servidor_emergencia, ServidorEmergenciaWeb.Endpoint,
+config :emergency_server, EmergencyServerWeb.Endpoint,
   url: [host: "localhost"],
   adapter: Bandit.PhoenixAdapter,
   render_errors: [
-    formats: [html: ServidorEmergenciaWeb.ErrorHTML, json: ServidorEmergenciaWeb.ErrorJSON],
+    formats: [html: EmergencyServerWeb.ErrorHTML, json: EmergencyServerWeb.ErrorJSON],
     layout: false
   ],
-  pubsub_server: ServidorEmergencia.PubSub,
+  pubsub_server: EmergencyServer.PubSub,
   live_view: [signing_salt: "oT8sEvPL"],
   secret_key_base: "5u6o+tWJGdifdMGy0W3fmZ8+XZmIdz4aM+rmLl5QYatIOjrQM6hf3suXeJlcFm3V"
 
 config :phoenix_live_view, root_tag_attribute: "phx-r"
 config :phoenix, :json_library, Jason
 
-# Wildcard DNS resolver (ServidorEmergencia.WildcardDns) used by the
+# Wildcard DNS resolver (EmergencyServer.WildcardDns) used by the
 # captive portal. Each environment overrides the port/answer IP below.
-config :servidor_emergencia_firmware, :wildcard_dns,
+config :emergency_server_firmware, :wildcard_dns,
   port: 53,
   answer_ip: {192, 168, 24, 1}
 

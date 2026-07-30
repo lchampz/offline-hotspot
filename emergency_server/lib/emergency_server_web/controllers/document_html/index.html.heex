@@ -1,0 +1,19 @@
+<Layouts.app flash={@flash}>
+  <.header>
+    Documents
+    <:subtitle>First-aid manuals, local maps, and other files available offline.</:subtitle>
+  </.header>
+
+  <div :if={@documents == []} class="mt-6 text-sm text-zinc-500">
+    No documents yet. Drop <code>.pdf</code> files into
+    <code>priv/static/documents</code> and they'll show up here.
+  </div>
+
+  <ul :if={@documents != []} class="mt-6 space-y-2">
+    <li :for={document <- @documents}>
+      <.link href={~p"/documents/#{document}"} target="_blank" class="underline">
+        {document}
+      </.link>
+    </li>
+  </ul>
+</Layouts.app>
