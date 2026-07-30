@@ -2,7 +2,7 @@ defmodule ServidorEmergencia.Avisos.Aviso do
   use Ecto.Schema
   import Ecto.Changeset
 
-  @categorias ~w(recado pedido_ajuda aviso_sanitario)
+  @categorias ~w(notice help_request health_notice)
 
   schema "avisos" do
     field :titulo, :string

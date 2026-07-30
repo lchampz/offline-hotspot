@@ -1,8 +1,8 @@
 defmodule ServidorEmergencia.Network.Mock do
   @moduledoc """
-  Simulador de status de rede, usado quando não há Raspberry Pi (dev no
-  Mac). Varia o número de "clientes conectados" periodicamente só para a
-  tela de status não ficar estática enquanto se testa a interface.
+  Network status simulator, used when there's no Raspberry Pi (dev on a
+  Mac). Varies the "connected clients" count periodically just so the
+  status screen isn't static while testing the interface.
   """
 
   @behaviour ServidorEmergencia.Network
@@ -16,10 +16,10 @@ defmodule ServidorEmergencia.Network.Mock do
   @impl ServidorEmergencia.Network
   def status do
     %{
-      ssid: "REDE-DE-EMERGENCIA-LOCAL (simulado)",
+      ssid: "LOCAL-EMERGENCY-NETWORK (simulated)",
       ip: "127.0.0.1",
       clientes_conectados: GenServer.call(__MODULE__, :clientes_conectados),
-      modo: :simulado
+      modo: :simulated
     }
   end
 

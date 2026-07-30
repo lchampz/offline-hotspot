@@ -1,12 +1,12 @@
 # ServidorEmergenciaFirmware
 
-Firmware Nerves da [Rede de Emergência](../README.md) — empacota o app
-`servidor_emergencia` para rodar direto no Raspberry Pi, emitindo o Wi-Fi
-de emergência com captive portal. Ver o README principal do repositório
-para o contexto completo do projeto.
+Nerves firmware for the [Emergency Network](../README.md) — packages the
+`servidor_emergencia` app to run directly on a Raspberry Pi, broadcasting
+the emergency Wi-Fi with captive portal. See the repository's main README
+for the full project context.
 
-Alvos suportados: `rpi3a` (Zero 2 W / 3A+) e `rpi0` (Zero W). Rode com
-`MIX_TARGET=host` para simular sem hardware nenhum.
+Supported targets: `rpi3a` (Zero 2 W / 3A+) and `rpi0` (Zero W). Run with
+`MIX_TARGET=host` to simulate it without any hardware.
 
 ## Targets
 

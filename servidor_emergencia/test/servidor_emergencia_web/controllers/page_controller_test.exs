@@ -3,6 +3,6 @@ defmodule ServidorEmergenciaWeb.PageControllerTest do
 
   test "GET /", %{conn: conn} do
     conn = get(conn, ~p"/")
-    assert html_response(conn, 200) =~ "Rede de Emergência"
+    assert html_response(conn, 200) =~ "Emergency Network"
   end
 end

@@ -1,6 +1,6 @@
 defmodule ServidorEmergencia.Chat do
   @moduledoc """
-  Contexto do chat em tempo real da sala local.
+  Real-time chat context for the local network room.
   """
 
   import Ecto.Query, warn: false

@@ -10,27 +10,27 @@ defmodule ServidorEmergenciaWeb.AvisoLive.Form do
     <Layouts.app flash={@flash}>
       <.header>
         {@page_title}
-        <:subtitle>Publique um recado, pedido de ajuda ou aviso sanitário.</:subtitle>
+        <:subtitle>Post a notice, a help request, or a health notice.</:subtitle>
       </.header>
 
       <.form for={@form} id="aviso-form" phx-change="validate" phx-submit="save">
-        <.input field={@form[:titulo]} type="text" label="Título" />
+        <.input field={@form[:titulo]} type="text" label="Title" />
         <.input
           field={@form[:categoria]}
           type="select"
-          label="Categoria"
-          prompt="Selecione uma categoria"
+          label="Category"
+          prompt="Select a category"
           options={[
-            {"Recado", "recado"},
-            {"Pedido de ajuda", "pedido_ajuda"},
-            {"Aviso sanitário", "aviso_sanitario"}
+            {"Notice", "notice"},
+            {"Help request", "help_request"},
+            {"Health notice", "health_notice"}
           ]}
         />
-        <.input field={@form[:autor]} type="text" label="Autor" />
-        <.input field={@form[:conteudo]} type="textarea" label="Conteúdo" />
+        <.input field={@form[:autor]} type="text" label="Author" />
+        <.input field={@form[:conteudo]} type="textarea" label="Content" />
         <footer>
-          <.button phx-disable-with="Salvando..." variant="primary">Salvar aviso</.button>
-          <.button navigate={return_path(@return_to, @aviso)}>Cancelar</.button>
+          <.button phx-disable-with="Saving..." variant="primary">Save notice</.button>
+          <.button navigate={return_path(@return_to, @aviso)}>Cancel</.button>
         </footer>
       </.form>
     </Layouts.app>
@@ -52,7 +52,7 @@ defmodule ServidorEmergenciaWeb.AvisoLive.Form do
     aviso = Avisos.get_aviso!(id)
 
     socket
-    |> assign(:page_title, "Editar aviso")
+    |> assign(:page_title, "Edit notice")
     |> assign(:aviso, aviso)
     |> assign(:form, to_form(Avisos.change_aviso(aviso)))
   end
@@ -61,7 +61,7 @@ defmodule ServidorEmergenciaWeb.AvisoLive.Form do
     aviso = %Aviso{}
 
     socket
-    |> assign(:page_title, "Novo aviso")
+    |> assign(:page_title, "New notice")
     |> assign(:aviso, aviso)
     |> assign(:form, to_form(Avisos.change_aviso(aviso)))
   end
@@ -81,7 +81,7 @@ defmodule ServidorEmergenciaWeb.AvisoLive.Form do
       {:ok, aviso} ->
         {:noreply,
          socket
-         |> put_flash(:info, "Aviso atualizado com sucesso")
+         |> put_flash(:info, "Notice updated successfully")
          |> push_navigate(to: return_path(socket.assigns.return_to, aviso))}
 
       {:error, %Ecto.Changeset{} = changeset} ->
@@ -94,7 +94,7 @@ defmodule ServidorEmergenciaWeb.AvisoLive.Form do
       {:ok, aviso} ->
         {:noreply,
          socket
-         |> put_flash(:info, "Aviso criado com sucesso")
+         |> put_flash(:info, "Notice created successfully")
          |> push_navigate(to: return_path(socket.assigns.return_to, aviso))}
 
       {:error, %Ecto.Changeset{} = changeset} ->

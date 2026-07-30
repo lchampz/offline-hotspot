@@ -16,7 +16,7 @@ defmodule ServidorEmergencia.WildcardDnsTest do
     %{pid: pid, port: port, client: client}
   end
 
-  test "resolve qualquer domínio A para o IP configurado", %{port: port, client: client} do
+  test "resolves any A query to the configured IP", %{port: port, client: client} do
     query = build_query(1234, "connectivitycheck.gstatic.com")
     :ok = :gen_udp.send(client, {127, 0, 0, 1}, port, query)
 
@@ -24,7 +24,7 @@ defmodule ServidorEmergencia.WildcardDnsTest do
     assert {:ok, 1234, [@answer_ip]} = parse_response(response)
   end
 
-  test "responde de forma diferente para um segundo domínio qualquer", %{port: port, client: client} do
+  test "answers a second arbitrary domain the same way", %{port: port, client: client} do
     query = build_query(42, "captive.apple.com")
     :ok = :gen_udp.send(client, {127, 0, 0, 1}, port, query)
 

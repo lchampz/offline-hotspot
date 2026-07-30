@@ -21,11 +21,11 @@ defmodule ServidorEmergencia.AvisosTest do
     end
 
     test "create_aviso/1 with valid data creates a aviso" do
-      valid_attrs = %{titulo: "some titulo", categoria: "recado", autor: "some autor", conteudo: "some conteudo"}
+      valid_attrs = %{titulo: "some titulo", categoria: "notice", autor: "some autor", conteudo: "some conteudo"}
 
       assert {:ok, %Aviso{} = aviso} = Avisos.create_aviso(valid_attrs)
       assert aviso.titulo == "some titulo"
-      assert aviso.categoria == "recado"
+      assert aviso.categoria == "notice"
       assert aviso.autor == "some autor"
       assert aviso.conteudo == "some conteudo"
     end
@@ -36,11 +36,11 @@ defmodule ServidorEmergencia.AvisosTest do
 
     test "update_aviso/2 with valid data updates the aviso" do
       aviso = aviso_fixture()
-      update_attrs = %{titulo: "some updated titulo", categoria: "pedido_ajuda", autor: "some updated autor", conteudo: "some updated conteudo"}
+      update_attrs = %{titulo: "some updated titulo", categoria: "help_request", autor: "some updated autor", conteudo: "some updated conteudo"}
 
       assert {:ok, %Aviso{} = aviso} = Avisos.update_aviso(aviso, update_attrs)
       assert aviso.titulo == "some updated titulo"
-      assert aviso.categoria == "pedido_ajuda"
+      assert aviso.categoria == "help_request"
       assert aviso.autor == "some updated autor"
       assert aviso.conteudo == "some updated conteudo"
     end

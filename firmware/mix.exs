@@ -33,9 +33,9 @@ defmodule ServidorEmergenciaFirmware.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      # App Phoenix (servidor_emergencia/) rodando como dependência —
-      # inicia sozinho junto com a release por já ter seu próprio
-      # Application callback (Repo + PubSub + Endpoint).
+      # Phoenix app (servidor_emergencia/) running as a dependency — it
+      # starts on its own alongside the release since it already has its
+      # own Application callback (Repo + PubSub + Endpoint).
       {:servidor_emergencia, path: "../servidor_emergencia"},
 
       # Dependencies for all targets

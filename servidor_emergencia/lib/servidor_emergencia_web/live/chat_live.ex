@@ -9,8 +9,8 @@ defmodule ServidorEmergenciaWeb.ChatLive do
     ~H"""
     <Layouts.app flash={@flash}>
       <.header>
-        Chat da Rede Local
-        <:subtitle>Converse com quem estiver conectado neste mesmo Wi-Fi, em tempo real.</:subtitle>
+        Local Network Chat
+        <:subtitle>Chat in real time with whoever else is connected to this same Wi-Fi.</:subtitle>
       </.header>
 
       <div
@@ -18,8 +18,8 @@ defmodule ServidorEmergenciaWeb.ChatLive do
         class="mt-6"
       >
         <.form for={@nome_form} phx-submit="entrar">
-          <.input field={@nome_form[:nome]} type="text" label="Como você quer ser chamado?" />
-          <.button variant="primary" class="mt-2">Entrar no chat</.button>
+          <.input field={@nome_form[:nome]} type="text" label="What should we call you?" />
+          <.button variant="primary" class="mt-2">Join chat</.button>
         </.form>
       </div>
 
@@ -36,8 +36,8 @@ defmodule ServidorEmergenciaWeb.ChatLive do
         </div>
 
         <.form for={@form} id="mensagem-form" phx-hook="ResetOnEvent" phx-submit="enviar" class="mt-4 flex gap-2">
-          <.input field={@form[:conteudo]} type="text" placeholder="Escreva uma mensagem..." />
-          <.button variant="primary">Enviar</.button>
+          <.input field={@form[:conteudo]} type="text" placeholder="Write a message..." />
+          <.button variant="primary">Send</.button>
         </.form>
       </div>
     </Layouts.app>

@@ -1,4 +1,4 @@
-# servidor_emergencia (app Phoenix)
+# servidor_emergencia (Phoenix app)
 /servidor_emergencia/_build/
 /servidor_emergencia/cover/
 /servidor_emergencia/deps/
@@ -15,7 +15,7 @@
 /servidor_emergencia/*.db
 /servidor_emergencia/*.db-*
 
-# firmware (projeto Nerves)
+# firmware (Nerves project)
 /firmware/_build/
 /firmware/cover/
 /firmware/deps/

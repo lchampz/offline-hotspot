@@ -39,7 +39,7 @@ defmodule ServidorEmergenciaWeb.Layouts do
       <div class="flex-1">
         <a href="/" class="flex-1 flex w-fit items-center gap-2">
           <img src={~p"/images/logo.svg"} width="36" />
-          <span class="text-sm font-semibold">Rede de Emergência</span>
+          <span class="text-sm font-semibold">Emergency Network</span>
         </a>
       </div>
       <div class="flex-none">
@@ -48,13 +48,13 @@ defmodule ServidorEmergenciaWeb.Layouts do
             <a href="/chat" class="btn btn-ghost">Chat</a>
           </li>
           <li>
-            <a href="/avisos" class="btn btn-ghost">Avisos</a>
+            <a href="/avisos" class="btn btn-ghost">Board</a>
           </li>
           <li>
-            <a href="/documentos" class="btn btn-ghost">Documentos</a>
+            <a href="/documentos" class="btn btn-ghost">Documents</a>
           </li>
           <li>
-            <a href="/rede" class="btn btn-ghost">Rede</a>
+            <a href="/rede" class="btn btn-ghost">Network</a>
           </li>
           <li>
             <.theme_toggle />

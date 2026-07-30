@@ -1,15 +1,15 @@
 defmodule ServidorEmergencia.Network.Real do
   @moduledoc """
-  Implementação real, para quando o firmware roda no Raspberry Pi.
+  Real implementation, for when the firmware runs on the Raspberry Pi.
 
-  SSID/IP vêm da configuração estática do VintageNet (não usamos DHCP no
-  wlan0, então esses valores são conhecidos em tempo de build, não
-  precisam ser consultados via API do VintageNet).
+  SSID/IP come from VintageNet's static configuration (we don't use DHCP
+  on wlan0, so these values are known at build time and don't need to be
+  queried through the VintageNet API).
 
-  A contagem de clientes conectados AINDA NÃO está implementada de
-  verdade — isso exige ler o socket de controle do hostapd (algo como
-  `iw dev wlan0 station dump`), o que só dá para validar com o Pi em mãos.
-  Por enquanto retorna 0 para não fingir um dado que não temos.
+  Connected-client counting is NOT actually implemented yet — that
+  requires reading hostapd's control socket (something like
+  `iw dev wlan0 station dump`), which can only be validated with the Pi
+  in hand. For now it returns 0 instead of faking data we don't have.
   """
 
   @behaviour ServidorEmergencia.Network
@@ -17,7 +17,7 @@ defmodule ServidorEmergencia.Network.Real do
   @impl ServidorEmergencia.Network
   def status do
     %{
-      ssid: "REDE-DE-EMERGENCIA-LOCAL",
+      ssid: "LOCAL-EMERGENCY-NETWORK",
       ip: "192.168.24.1",
       clientes_conectados: 0,
       modo: :real

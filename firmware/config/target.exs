@@ -65,7 +65,7 @@ config :vintage_net,
      %{
        type: VintageNetWiFi,
        vintage_net_wifi: %{
-         networks: [%{mode: :ap, ssid: "REDE-DE-EMERGENCIA-LOCAL", key_mgmt: :none}]
+         networks: [%{mode: :ap, ssid: "LOCAL-EMERGENCY-NETWORK", key_mgmt: :none}]
        },
        ipv4: %{method: :static, address: "192.168.24.1", prefix_length: 24},
        dhcpd: %{start: "192.168.24.10", end: "192.168.24.100"}

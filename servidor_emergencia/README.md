@@ -1,15 +1,15 @@
 # ServidorEmergencia
 
-App Phoenix da [Rede de Emergência](../README.md) — quadro de avisos, chat
-em tempo real e documentos offline. Ver o README principal do repositório
-para o contexto completo do projeto.
+Phoenix app for the [Emergency Network](../README.md) — notice board,
+real-time chat, and offline documents. See the repository's main README
+for the full project context.
 
 ```bash
 mix setup
 mix phx.server
 ```
 
-Acesse [`localhost:4000`](http://localhost:4000).
+Visit [`localhost:4000`](http://localhost:4000).
 
 ## Learn more
 

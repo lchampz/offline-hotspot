@@ -18,9 +18,9 @@ config :nerves, :firmware, rootfs_overlay: "rootfs_overlay"
 
 config :nerves, source_date_epoch: "1785372114"
 
-# Config do app Phoenix (servidor_emergencia/), replicada aqui porque o
-# config.exs dele não é carregado automaticamente quando ele entra como
-# dependência de um outro projeto Mix.
+# Config for the Phoenix app (servidor_emergencia/), replicated here
+# because its own config.exs isn't loaded automatically when it's pulled
+# in as a dependency of another Mix project.
 config :servidor_emergencia,
   ecto_repos: [ServidorEmergencia.Repo],
   generators: [timestamp_type: :utc_datetime]
@@ -39,8 +39,8 @@ config :servidor_emergencia, ServidorEmergenciaWeb.Endpoint,
 config :phoenix_live_view, root_tag_attribute: "phx-r"
 config :phoenix, :json_library, Jason
 
-# Resolver DNS wildcard (ServidorEmergencia.WildcardDns) usado pelo captive
-# portal. Cada ambiente sobrescreve porta/IP de resposta abaixo.
+# Wildcard DNS resolver (ServidorEmergencia.WildcardDns) used by the
+# captive portal. Each environment overrides the port/answer IP below.
 config :servidor_emergencia_firmware, :wildcard_dns,
   port: 53,
   answer_ip: {192, 168, 24, 1}

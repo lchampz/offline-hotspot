@@ -12,7 +12,7 @@ defmodule ServidorEmergencia.AvisosFixtures do
       attrs
       |> Enum.into(%{
         autor: "some autor",
-        categoria: "recado",
+        categoria: "notice",
         conteudo: "some conteudo",
         titulo: "some titulo"
       })

@@ -8,20 +8,20 @@ defmodule ServidorEmergenciaWeb.RedeLive do
     ~H"""
     <Layouts.app flash={@flash}>
       <.header>
-        Status da Rede
-        <:subtitle>Informações do ponto de acesso Wi-Fi local.</:subtitle>
+        Network Status
+        <:subtitle>Information about the local Wi-Fi access point.</:subtitle>
       </.header>
 
-      <div :if={@status.modo == :simulado} class="mt-4 rounded-box bg-warning/20 px-4 py-2 text-sm">
-        Modo simulado — não há Raspberry Pi conectado. Estes dados são gerados
-        localmente para permitir testar a interface antes do hardware chegar.
+      <div :if={@status.modo == :simulated} class="mt-4 rounded-box bg-warning/20 px-4 py-2 text-sm">
+        Simulated mode — no Raspberry Pi is connected. This data is generated
+        locally so the interface can be tested before the hardware arrives.
       </div>
 
       <.list>
         <:item title="SSID">{@status.ssid}</:item>
-        <:item title="IP do ponto de acesso">{@status.ip}</:item>
-        <:item title="Clientes conectados">{@status.clientes_conectados}</:item>
-        <:item title="Modo">{modo_label(@status.modo)}</:item>
+        <:item title="Access point IP">{@status.ip}</:item>
+        <:item title="Connected clients">{@status.clientes_conectados}</:item>
+        <:item title="Mode">{modo_label(@status.modo)}</:item>
       </.list>
     </Layouts.app>
     """
@@ -39,6 +39,6 @@ defmodule ServidorEmergenciaWeb.RedeLive do
     {:noreply, assign(socket, :status, Network.status())}
   end
 
-  defp modo_label(:simulado), do: "Simulado (dev)"
+  defp modo_label(:simulated), do: "Simulated (dev)"
   defp modo_label(:real), do: "Real (hardware)"
 end

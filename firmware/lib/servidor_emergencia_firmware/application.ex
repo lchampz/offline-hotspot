@@ -24,16 +24,16 @@ defmodule ServidorEmergenciaFirmware.Application do
   if Mix.target() == :host do
     defp target_children() do
       [
-        # Roda no host também: dá pra resolver um domínio qualquer contra
-        # localhost:5353 e abrir o resultado no navegador, simulando o
-        # captive portal de ponta a ponta sem hardware nenhum.
+        # Also runs on host: you can resolve any domain against
+        # localhost:15353 and open the result in a browser, simulating the
+        # captive portal end-to-end without any hardware.
         {ServidorEmergencia.WildcardDns, wildcard_dns_opts()}
       ]
     end
   else
     defp target_children() do
       [
-        # No hardware real, responde no IP estático do próprio Pi (192.168.24.1).
+        # On real hardware, answers with the Pi's own static IP (192.168.24.1).
         {ServidorEmergencia.WildcardDns, wildcard_dns_opts()}
       ]
     end

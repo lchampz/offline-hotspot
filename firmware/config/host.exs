@@ -2,24 +2,25 @@ import Config
 
 # Add configuration that is only needed when running on the host here.
 
-# No host, usamos uma porta alta (não requer privilégio de root) e
-# respondemos com localhost — assim dá pra abrir o IP resolvido no
-# navegador e fechar o ciclo inteiro do captive portal, sem hardware.
+# On the host, we use a high port (doesn't require root) and answer with
+# localhost — so you can open the resolved IP in a browser and close the
+# whole captive portal loop without any hardware.
 config :servidor_emergencia_firmware, :wildcard_dns,
-  # 5353 é a porta padrão de mDNS/Bonjour, já ocupada no macOS — usamos
-  # uma porta alta qualquer só para a demonstração local.
+  # 5353 is the standard mDNS/Bonjour port, already taken on macOS — we
+  # use an arbitrary high port just for the local demo.
   port: 15353,
   answer_ip: {127, 0, 0, 1}
 
-# Sobe o Phoenix igual ao "mix phx.server" normal, só que dentro do
-# supervisor do firmware simulado (é isso que vai rodar de verdade dentro
-# do Nerves lá no Pi).
+# Boots Phoenix just like a normal "mix phx.server", except inside the
+# simulated firmware's supervisor (this is what will actually run inside
+# Nerves on the Pi).
 config :servidor_emergencia, ServidorEmergenciaWeb.Endpoint,
   http: [ip: {0, 0, 0, 0}, port: 4000],
   check_origin: false,
-  # phoenix_live_reload é dep :dev do servidor_emergencia e não é puxada
-  # quando ele entra como path-dependency aqui; o hot reload de código
-  # roda pelo `listeners: [Phoenix.CodeReloader]` já configurado no mix.exs.
+  # phoenix_live_reload is a :dev dep of servidor_emergencia and isn't
+  # pulled in when it's used as a path-dependency here; code hot reload
+  # runs through the `listeners: [Phoenix.CodeReloader]` already set in
+  # mix.exs.
   code_reloader: false,
   debug_errors: true,
   server: true

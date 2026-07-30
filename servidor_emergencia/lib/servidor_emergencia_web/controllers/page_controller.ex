@@ -6,8 +6,8 @@ defmodule ServidorEmergenciaWeb.PageController do
   end
 
   @doc """
-  Recebe qualquer rota desconhecida (usada pelos testes de captive portal do
-  SO do celular) e redireciona para a home.
+  Catches any unrecognized route (hit by the phone OS's captive portal
+  connectivity checks) and redirects to the home page.
   """
   def captive_portal(conn, _params) do
     redirect(conn, to: ~p"/")

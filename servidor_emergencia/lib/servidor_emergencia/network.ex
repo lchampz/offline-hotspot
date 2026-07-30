@@ -1,18 +1,20 @@
 defmodule ServidorEmergencia.Network do
   @moduledoc """
-  Interface única de status da rede Wi-Fi/AP. Quem consome (a LiveView de
-  status, por exemplo) não sabe se está falando com o simulador (rodando
-  no Mac, sem hardware) ou com a implementação real (no Raspberry Pi).
+  Single interface for Wi-Fi/AP network status. Whoever consumes it (the
+  status LiveView, for example) doesn't know whether it's talking to the
+  simulator (running on a Mac, no hardware) or the real implementation
+  (on the Raspberry Pi).
 
-  Isso é o que permite programar contra a interface agora — antes do
-  hardware chegar — e trocar só a implementação depois, sem tocar na UI.
+  This is what lets us code against the interface now — before the
+  hardware arrives — and swap only the implementation later, without
+  touching the UI.
   """
 
   @type status :: %{
           ssid: String.t(),
           ip: String.t(),
           clientes_conectados: non_neg_integer(),
-          modo: :simulado | :real
+          modo: :simulated | :real
         }
 
   @callback status() :: status()

@@ -50,16 +50,17 @@ defmodule ServidorEmergenciaWeb.Router do
     end
   end
 
-  # Captive portal catch-all: qualquer rota não reconhecida (os testes de
-  # conectividade que iOS/Android/Windows disparam ao entrar num Wi-Fi novo,
-  # como /generate_204, /hotspot-detect.html, /ncsi.txt) cai aqui e é
-  # redirecionada para a home. Precisa ser a ÚLTIMA rota do arquivo para não
-  # sombrear nenhuma rota específica (inclusive o /dev/dashboard acima).
+  # Captive portal catch-all: any unrecognized route (the connectivity
+  # checks that iOS/Android/Windows fire when joining a new Wi-Fi network,
+  # like /generate_204, /hotspot-detect.html, /ncsi.txt) lands here and
+  # gets redirected to the home page. This MUST be the last route in the
+  # file so it doesn't shadow any specific route (including /dev/dashboard
+  # above).
   #
-  # Isso resolve só a parte HTTP do captive portal. Para o pop-up do captive
-  # portal disparar de verdade no celular, falta o componente de DNS wildcard
-  # (todo domínio resolvendo para o IP do Pi) — isso é feito na Fase 3, no
-  # firmware Nerves, e não dá para testar sem o hardware real.
+  # This only solves the HTTP half of the captive portal. For the pop-up
+  # to actually fire on the phone, we still need the wildcard DNS piece
+  # (every domain resolving to the Pi's IP) — that's done in Phase 3, in
+  # the Nerves firmware, and can't be tested without real hardware.
   scope "/", ServidorEmergenciaWeb do
     pipe_through :browser
 

@@ -42,9 +42,9 @@ defmodule ServidorEmergencia.Application do
     System.get_env("RELEASE_NAME") == nil
   end
 
-  # O adapter Mock roda como GenServer (precisa de processo, tem estado
-  # que varia com o tempo). O adapter Real é só funções puras — nada a
-  # supervisionar.
+  # The Mock adapter runs as a GenServer (it needs a process, its state
+  # varies over time). The Real adapter is just pure functions — nothing
+  # to supervise.
   defp network_adapter_children do
     case Application.get_env(:servidor_emergencia, :network_adapter, ServidorEmergencia.Network.Mock) do
       ServidorEmergencia.Network.Mock -> [ServidorEmergencia.Network.Mock]
